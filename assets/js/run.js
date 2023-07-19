@@ -10,17 +10,23 @@ function writePassword() {
   var pwSpecChar = window.confirm("Will the PW include special characters?");
 
   // Verify PW meets criteria
-  console.log(typeof pwLength);
-  if (typeof(pwLength) === "string" || pwLength < 8 || pwLength > 128) {
+    // Convert pwLength to a number so it can be verified
+  pwLength = Number(pwLength);
+    // Verify pwLength is a number between 8 and 128
+  if (Number.isNaN(pwLength) || pwLength < 8 || pwLength > 128) {
     window.alert("PW length must be a number between 8 and 128");
     return;
   }
+  // Verify that at least 1 option was selected
   if (!(pwLower || pwUpper || pwNumber || pwSpecChar)) {
     window.alert("PW must include at least one of the character types");
     return;
   }
   var password = generatePassword(pwLength, pwLower, pwUpper, pwNumber, pwSpecChar)
-  window.alert(`Your new password is ${password}`);
+  
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 }
 function generatePassword(pwLength, pwLower, pwUpper, pwNumber, pwSpecChar) {
   // Create a concatenation of possible characters to be used in PW generation 
