@@ -3,7 +3,7 @@
 #### Coder: Tom Fusco 19-Jul-2023
 #### JavaScript: Password Generator
 
-<img src="Assets/images/03-javascript-homework-demo.png" width=20%>
+<img src="assets/images/03-javascript-homework-demo.png" width=20%>
 
 #### Link to Deployed Application:  https://smokerdog57.github.io/passwordgeneration/
 #### Link to GitHub repository:     https://github.com/smokerdog57/passwordgeneration/
